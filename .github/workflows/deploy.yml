@@ -1,22 +1,24 @@
-name: Deploy Website via FTP
+name: Deploy Website via SFTP
 
 on:
   push:
     branches:
-      - main # Triggers the deploy when you push to the main branch
+      - main
 
 jobs:
-  web-deploy:
-    name: Deploy
+  deploy:
+    name: SFTP Deploy
     runs-on: ubuntu-latest
     steps:
       - name: 🚚 Get latest code
         uses: actions/checkout@v4
 
-      - name: 📂 Sync files to server
-        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+      - name: 📂 Sync files to server via SFTP
+        uses: wlixcc/SFTP-Deploy-Action@v1.2.4
         with:
-          server: ${{ secrets.FTP_SERVER }}
-          username: ${{ secrets.FTP_USERNAME }}
-          password: ${{ secrets.FTP_PASSWORD }}
-          server-dir: /public_html/ # Change this to your server's target folder
+          username: ${{ secrets.SFTP_USERNAME }}
+          server: ${{ secrets.SFTP_SERVER }}
+          password: ${{ secrets.SFTP_PASSWORD }} # Used password instead of key
+          port: 22
+          local_path: "./*"
+          remote_path: "/home/dh_irms6t/" # Your target folder on the server
