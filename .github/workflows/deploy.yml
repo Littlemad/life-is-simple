@@ -21,4 +21,4 @@ jobs:
           password: ${{ secrets.SFTP_PASSWORD }} # Used password instead of key
           port: 22
           local_path: "./*"
-          remote_path: "/home/dh_irms6t/" # Your target folder on the server
+          remote_path: "/home/dh_irms6t/life-is-simple.net/" # Your target folder on the server
