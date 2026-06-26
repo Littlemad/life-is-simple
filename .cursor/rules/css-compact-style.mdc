@@ -1,0 +1,69 @@
+---
+globs: **/*.css
+alwaysApply: false
+---
+
+# Compact CSS style
+
+Write all CSS in this project using compact selector blocks.
+
+## Default — short rules (≤140 chars)
+
+- One selector block per line: `selector{prop:value; prop:value;}`
+- Put a space after each `;` between properties on the same line.
+- `@media` blocks: media query on its own line; each nested rule on one line (or use long-rule block if over 140 chars); closing `}` on its own line.
+- Comments stay on their own lines.
+- `@import` in `main.css` stays one import per line.
+- Optional blank line between unrelated rule groups in long files.
+
+## Exception — `:root` variables
+
+In [`02-variables.css`](src/asset/css/02-variables.css), one custom property per line:
+
+```css
+:root{
+--background:#ffffff;
+--foreground:#171717;
+--accent:#0070f3;
+}
+```
+
+- `:root{` on its own line; closing `}` on its own line.
+- Each `--token:value;` on its own line.
+
+## Exception — long rules (>140 chars)
+
+When a rule exceeds **140 characters** total, use a block with wrapped properties (not one property per line):
+
+```css
+body{
+    background:var(--background); color:var(--foreground); font-family:var(--font-sans);
+    min-height:100vh; line-height:1.6;
+}
+```
+
+- `selector{` on its own line.
+- Properties indented with **4 spaces**; multiple properties per line, wrapping at ~140 chars per line.
+- Closing `}` on its own line.
+
+## Do not touch
+
+- **Do not reformat or edit** [`src/asset/css/03-load-font.css`](src/asset/css/03-load-font.css) unless the user explicitly asks to change font loading. No formatting exceptions apply to that file — leave it exactly as-is.
+
+## Examples
+
+```css
+.grid{display:grid; grid-template-columns:repeat(12, 1fr);}
+.grid--pad-xs{padding:var(--space-xs);}
+a{color:var(--accent); text-decoration:none;}
+
+@media screen and (min-width: 768px){
+.grid__col4{grid-column:span 4;}
+}
+```
+
+## Do not
+
+- Do not use Prettier-style formatting (one property per line for normal selectors).
+- Do not modify `03-load-font.css` when reformatting or editing other CSS files.
+- Do not collapse `:root` tokens onto one line or expand short rules unnecessarily.

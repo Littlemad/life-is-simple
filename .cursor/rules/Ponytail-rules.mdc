@@ -1,0 +1,5 @@
+---
+alwaysApply: true
+---
+
+Does it really need to exist? If it is a speculative need, skip it and say so in one line. This is the YAGNI principle, an acronym for You Aren't Gonna Need It. Does the standard library do it? Use it. Does a native platform feature cover it? An <input type="date"> instead of a library, CSS instead of JavaScript, a database constraint instead of application code. Does an already installed dependency solve it? Use it, and never add a new one for what a few lines can do. Can it fit in one line? Do it in one line. Only then: write the minimum code that works.

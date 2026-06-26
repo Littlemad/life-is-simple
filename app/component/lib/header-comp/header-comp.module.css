@@ -1,0 +1,27 @@
+.header{display:flex; padding:var(--space-m) 0; justify-content:space-between;}
+.header_logoWrap{position:relative; padding-left:110px; font-family:ltc-bodoni-175;}
+.header_payoff, .header_logo{line-height:1;}
+.header_payoff{font-size:var(--font-size-s); font-style:italic; margin-bottom:var(--space-s);}
+.header_logo{display:block; font-size:80px;}
+
+.header_nav{display:flex; gap:var(--space-m); margin-right:var(--space-l);}
+.header_nav_li{display:inline-flex;}
+.header_nav_a{padding:var(--space-xs) var(--space-s);}
+.header_nav_a:hover{color:#fff; background:#1982D1;}
+
+/* THEME */
+
+/*
+
+TO DO: 
+- add a graphic to the dark mode alternative to the tulip
+- add a slight animation to the logo
+- add switch toggle to the dark and white mode to test things
+- add stylish CSS transition effect to the small navigation items when hovered
+
+:global([data-theme="dark"]) .header_logo{}
+*/
+:global([data-theme="light"]) .header_logo{
+    color:var(--color-black-l1);
+    background:var(--color-white-d1) url(../../../../src/asset/img/tulip.jpg) no-repeat 22px 22px;
+}
