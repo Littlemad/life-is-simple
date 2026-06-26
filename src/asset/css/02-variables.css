@@ -52,9 +52,10 @@
     --color-darkTheme-link-visited:var(--color-link-visited);
 
     /* TYPOGRAPHY*/
-    --font-family-primary: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    --font-family-primary: "Nunito", "Helvetica Neue", Helvetica, Arial, sans-serif;
     --font-lato: 'Lato', sans-serif;
     --font-nunito: 'Nunito', sans-serif;
+    --font-bodoni: 'Libre Bodoni', 'ltc-bodoni-175', serif;
     --font-code: Consolas, "courier new", sans-serif;
 
     --font-size-xs:1rem;
