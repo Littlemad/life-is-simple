@@ -66,25 +66,27 @@
     --font-size-xl:2rem;
     --font-size-xxl:2.5rem;
 
-    --font-weight-regular: 400;
-    --font-weight-bold: 700;
+    --font-weight-regular:400;
+    --font-weight-bold:700;
 }
 
 /* THEMING */
 
 /* dark theme default */
 [data-theme="dark"] { 
-    --bg: var(--color-black-l1);
-    --bg-content: var(--color-black);
-    --color-text: var(--color-darkTheme-text);
-    --color-link: var(--color-darkTheme-link);
-    --color-link-visited: var(--color-darkTheme-link-visited);
+    --bg:var(--color-black-l1);
+    --bg-content:var(--color-black);
+    --color-text:var(--color-darkTheme-text);
+    --color-link:var(--color-darkTheme-link);
+    --color-link-visited:var(--color-darkTheme-link-visited);
+    --color-focus:var(--color-white);
 }
 
 [data-theme="light"] {
-    --bg: var(--color-white);
-    --bg-content: var(--color-grey-l2);
-    --color-text: var(--color-lightTheme-text);
-    --color-link: var(--color-lightTheme-link);
+    --bg:var(--color-white);
+    --bg-content:var(--color-grey-l2);
+    --color-text:var(--color-lightTheme-text);
+    --color-link:var(--color-lightTheme-link);
     --color-link-visited: var(--color-lightTheme-link-visited);
+    --color-focus:#0E86D4;
 }

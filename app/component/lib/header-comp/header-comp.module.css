@@ -34,7 +34,7 @@
 .header_nav{display:flex; gap:var(--space-l); align-items:center; height:100%;}
 .header_nav_ul{display:flex; gap:var(--space-m); margin-right:var(--space-l); font-family:var(--font-georgia);}
 .header_nav_li{display:inline-flex;}
-.header_payoff_link{font-style:normal;}
+.header_nav_link:focus-visible{outline-offset:2px; border-radius:0.25rem;}
 
 /* ANIMATIONS */
 .header_payoff{--animate-delay:0.2s;}
@@ -50,18 +50,17 @@
     padding:var(--space-xs) var(--space-s); transition:background-size 350ms; border-radius:10px;
     margin-top:calc(-1 * var(--space-xs));
 }
-.fxLink:hover, .fxLink:focus{background-size:100% var(--bg-h); background-position-x:left;}
+.fxLink:hover, .fxLink:focus{background-size:100% var(--bg-h); background-position-x:left; color:var(--color-white);}
 
 /*
-
 TO DO: 
-- add switch toggle to the dark and white mode to test things
-add responsiveness to the header
+- add responsiveness to the header
 */
 
 /* THEME */
 :global([data-theme="dark"]){
     .header_nav_link:hover{color:var(--color-white-d1);}
+    .header_nav_link:focus-visible{outline:2px solid var(--color-white);}
     .header_logoWrap{
         color:var(--color-white-l1);
         &:before{
@@ -74,6 +73,7 @@ add responsiveness to the header
 
 :global([data-theme="light"]){
     .header_nav_link:hover{color:var(--color-black-l1);}
+    .header_nav_link:focus-visible{outline:2px solid var(--color-focus);}
     .header_logoWrap{
         color:var(--color-black-l1);
         &:before{

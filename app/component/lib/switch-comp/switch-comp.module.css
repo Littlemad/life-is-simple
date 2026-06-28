@@ -1,12 +1,16 @@
-.switch{display:inline-flex; align-items:center; position:relative; vertical-align:middle;}
+.switch{
+    display:inline-flex; align-items:center; position:relative; vertical-align:middle; 
+    padding:var(--space-xs); cursor:pointer;
+}
+.switch_input{position:absolute; width:0; height:0; top:-9999px;}
+.switch_input:focus-visible + .slider{outline:2px solid var(--color-focus); outline-offset:4px;}
+.switch_input:checked + .slider:before{transform:translateX(1.125rem);}
 .switch_track{position:relative; width:2.25rem; height:1.125rem; flex-shrink:0;}
-.switch_track input{position:absolute; width:0; height:0; left:-9999px;}
 .slider{
-    position:absolute; cursor:pointer; inset:0;
-    background:var(--color-grey-d1); border-radius:1.125rem; transition:background .2s;
+    position:absolute; inset:0; background:var(--color-grey-d1); border-radius:1.125rem; 
+    transition:background .2s;
 }
 .slider:before{
     content:''; position:absolute; width:0.875rem; height:0.875rem; left:0.125rem; bottom:0.125rem;
-    background:var(--color-white); border-radius:50%; transition:transform .4s;
+    background:var(--color-white); border-radius:50%; transition:transform .3s;
 }
-.switch_input:checked + .slider:before{transform:translateX(1.125rem);}
