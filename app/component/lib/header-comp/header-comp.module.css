@@ -18,28 +18,67 @@
 }
 
 .header{display:flex; padding:var(--space-m) 0; justify-content:space-between;}
-.header_logoWrap{position:relative; padding-left:110px; font-family:var(--font-bodoni);}
-.header_logo{display:block; font-size:80px; line-height:1;}
-.header_payoff{font-size:var(--font-size-s); font-style:italic; margin-bottom:var(--space-s);}
-
-.header_nav{display:flex; gap:var(--space-m); margin-right:var(--space-l);}
+.header_logoWrap{display:grid; grid-template-columns:110px auto; font-family:var(--font-bodoni);}
+.header_logoWrap:before{
+    content:''; width:100%; height:100%;
+    grid-column:1; grid-row:1/3;
+}
+.header_payoff{
+    font-size:var(--font-size-s); font-style:italic; margin-bottom:var(--space-s);
+    grid-column:2; grid-row:1;
+}
+.header_logo{
+    display:block; font-size:80px; line-height:1;
+    grid-column:2; grid-row:2;
+}
+.header_nav{display:flex; gap:var(--space-l); align-items:center; height:100%;}
+.header_nav_ul{display:flex; gap:var(--space-m); margin-right:var(--space-l); font-family:var(--font-georgia);}
 .header_nav_li{display:inline-flex;}
-.header_nav_a{padding:var(--space-xs) var(--space-s);}
-.header_nav_a:hover{color:#fff; background:#1982D1;}
+.header_payoff_link{font-style:normal;}
 
-/* THEME */
+/* ANIMATIONS */
+.header_payoff{--animate-delay:0.2s;}
+.header_logo{--animate-delay:0.4s;}
+.header_nav_li{--animate-duration:0.3s;}
+.header_nav_li:nth-child(1){--animate-delay:0.7s;}
+.header_nav_li:nth-child(2){--animate-delay:0.8s;}
+.header_nav_li:nth-child(3){--animate-delay:0.9s;}
+
+.fxLink{
+    --bg-h: 100%;
+    background:linear-gradient(0deg, #1982D1, #1982D1) no-repeat right bottom / 0 var(--bg-h);
+    padding:var(--space-xs) var(--space-s); transition:background-size 350ms; border-radius:10px;
+    margin-top:calc(-1 * var(--space-xs));
+}
+.fxLink:hover, .fxLink:focus{background-size:100% var(--bg-h); background-position-x:left;}
 
 /*
 
 TO DO: 
-- add a graphic to the dark mode alternative to the tulip
-- add a slight animation to the logo
 - add switch toggle to the dark and white mode to test things
-- add stylish CSS transition effect to the small navigation items when hovered
-
-:global([data-theme="dark"]) .header_logo{}
+add responsiveness to the header
 */
-:global([data-theme="light"]) .header_logo{
-    color:var(--color-black-l1);
-    background:var(--color-white-d1) url(../../../../src/asset/img/tulip.jpg) no-repeat 22px 22px;
+
+/* THEME */
+:global([data-theme="dark"]){
+    .header_nav_link:hover{color:var(--color-white-d1);}
+    .header_logoWrap{
+        color:var(--color-white-l1);
+        &:before{
+            background:url(../../../../src/asset/img/koi-trans.png) no-repeat 18px 6px;
+            background-size:81px 104px;
+            filter:grayscale(.1);
+        }
+    }
 }
+
+:global([data-theme="light"]){
+    .header_nav_link:hover{color:var(--color-black-l1);}
+    .header_logoWrap{
+        color:var(--color-black-l1);
+        &:before{
+            background:var(--color-white-d1) url(../../../../src/asset/img/tulip.jpg) no-repeat 22px 10px;
+        }
+    }
+}
+

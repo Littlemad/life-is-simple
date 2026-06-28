@@ -17,6 +17,12 @@ export default function RootLayout({
         <title>Life is simple</title>
         <meta name="description" content="A collection of articles, photography, creative and good design that makes life easy and enjoyble to experience it" />
         <meta name="author" content="Alessio Carone" />
+
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `(function(){try{var t=localStorage.getItem("toggled");document.documentElement.dataset.theme=t==="dark"?"dark":"light";}catch(e){}})();`,
+          }}
+        />
       </head>
       <body>{children}</body>
     </html>

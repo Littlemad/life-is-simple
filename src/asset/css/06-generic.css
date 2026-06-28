@@ -2,6 +2,7 @@
 body{
     background:var(--bg); color:var(--color-text); font-family:var(--font-family-primary); 
     font-size:var(--font-size-s); min-height:100vh; line-height:1.6;
+    transition: background-color 0.3s, color 0.3s;
 }
 
 a{text-decoration:none; color:var(--color-link);}
@@ -11,6 +12,8 @@ a:active{color:var(--color-link-active);}
 
 .lato{font-family:var(--font-lato);}
 .nunito{font-family:var(--font-nunito);}
+.bodoni{font-family:var(--font-bodoni);}
+.georgia{font-family:var(--font-georgia);}
 .code{font-family:var(--font-code);}
 
 .regular{font-weight:400;}
@@ -18,7 +21,7 @@ strong, .bold{font-weight:bold;}
 em, .italic{font-style:italic;}
 p{margin-bottom:var(--space-m);}
 
-/*
+/* TODO add variables for font sizes
 .h1{font-size:$h1; line-height:$h1-line-height;}
 .h2{font-size:$h2; line-height:$h2-line-height;}
 .h3{font-size:$h3; line-height:$h3-line-height;}
@@ -37,6 +40,7 @@ p{margin-bottom:var(--space-m);}
     td, th{padding:var(--space-s);}
 }
 
+/* THEME */
 [data-theme="dark"] {
     .table{
         border-color:var(--color-white);

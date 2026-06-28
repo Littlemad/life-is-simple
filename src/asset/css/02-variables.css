@@ -51,11 +51,12 @@
     --color-darkTheme-link:var(--color-link);
     --color-darkTheme-link-visited:var(--color-link-visited);
 
-    /* TYPOGRAPHY*/
+    /* TYPOGRAPHY */
     --font-family-primary: "Nunito", "Helvetica Neue", Helvetica, Arial, sans-serif;
     --font-lato: 'Lato', sans-serif;
     --font-nunito: 'Nunito', sans-serif;
     --font-bodoni: 'Libre Bodoni', 'ltc-bodoni-175', serif;
+    --font-georgia: Georgia, Cambria, Times, serif;
     --font-code: Consolas, "courier new", sans-serif;
 
     --font-size-xs:1rem;
@@ -81,8 +82,8 @@
 }
 
 [data-theme="light"] {
-    --bg: var(--color-grey-l2);
-    --bg-content: var(--color-white);
+    --bg: var(--color-white);
+    --bg-content: var(--color-grey-l2);
     --color-text: var(--color-lightTheme-text);
     --color-link: var(--color-lightTheme-link);
     --color-link-visited: var(--color-lightTheme-link-visited);

@@ -1,0 +1,12 @@
+.switch{display:inline-flex; align-items:center; position:relative; vertical-align:middle;}
+.switch_track{position:relative; width:2.25rem; height:1.125rem; flex-shrink:0;}
+.switch_track input{position:absolute; width:0; height:0; left:-9999px;}
+.slider{
+    position:absolute; cursor:pointer; inset:0;
+    background:var(--color-grey-d1); border-radius:1.125rem; transition:background .2s;
+}
+.slider:before{
+    content:''; position:absolute; width:0.875rem; height:0.875rem; left:0.125rem; bottom:0.125rem;
+    background:var(--color-white); border-radius:50%; transition:transform .4s;
+}
+.switch_input:checked + .slider:before{transform:translateX(1.125rem);}
