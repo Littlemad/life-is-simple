@@ -1,5 +1,14 @@
 
 :root {
+    /* BREAKPOINTS */
+    --break-mobile-s:30rem; /* 480px */
+    --break-mobile:36rem; /* 576px */
+    --break-tablet-potrait:48rem; /* 768px */
+    --break-tablet-landscape:62rem; /* 992px */
+    --break-desktop:75rem; /* 1200px */
+    --break-desktop-l:90rem; /* 1440px */
+    --break-desktop-xl:120rem; /* 1920px */
+
     /* SPACING */
     --space-xs:0.25rem;
     --space-s:0.5rem;

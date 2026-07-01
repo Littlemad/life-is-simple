@@ -16,8 +16,13 @@ export function TextSlider() {
   }, []);
 
   return (
-    <span key={index} className={`${styles.slider} fade-in`}>
-      {items[index]}
-    </span>
+    <>
+    {/*
+      <span key={index} className={`${styles.slider} fade-in`}>
+        {items[index]}
+      </span>
+      */}
+      slider
+    </>
   );
 }

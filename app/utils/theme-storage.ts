@@ -3,13 +3,12 @@ const STORAGE_KEY = "toggled";
 const listeners = new Set<() => void>();
 
 export function readStoredTheme(): "dark" | "light" {
-  return localStorage.getItem(STORAGE_KEY) === "dark" ? "dark" : "light";
+  return localStorage.getItem(STORAGE_KEY) === "light" ? "light" : "dark";
 }
 
 export function applyTheme(theme: "dark" | "light") {
   document.documentElement.dataset.theme = theme;
-  if (theme === "dark") localStorage.setItem(STORAGE_KEY, "dark");
-  else localStorage.removeItem(STORAGE_KEY);
+  localStorage.setItem(STORAGE_KEY, theme);
   listeners.forEach((listener) => listener());
 }
 

@@ -18,21 +18,14 @@
 }
 
 .header{display:flex; padding:var(--space-m) 0; justify-content:space-between;}
-.header_logoWrap{display:grid; grid-template-columns:110px auto; font-family:var(--font-bodoni);}
-.header_logoWrap:before{
-    content:''; width:100%; height:100%;
-    grid-column:1; grid-row:1/3;
-}
+.header_logoWrap{font-family:var(--font-bodoni);}
 .header_payoff{
-    font-size:var(--font-size-s); font-style:italic; margin-bottom:var(--space-s);
-    grid-column:2; grid-row:1;
+    font-size:var(--font-size-xs); font-style:italic; margin-bottom:var(--space-s);
+    grid-column:2; grid-row:1; font-family: var(--font-georgia);
 }
-.header_logo{
-    display:block; font-size:80px; line-height:1;
-    grid-column:2; grid-row:2;
-}
+.header_logo{display:block; font-size:40px; line-height:1; grid-column:2; grid-row:2;}
 .header_nav{display:flex; gap:var(--space-l); align-items:center; height:100%;}
-.header_nav_ul{display:flex; gap:var(--space-m); margin-right:var(--space-l); font-family:var(--font-georgia);}
+.header_nav_ul{display:flex; gap:var(--space-m); margin-right:var(--space-l); font-family:var(--font-georgia); font-size:var(--font-size-xs);}
 .header_nav_li{display:inline-flex;}
 .header_nav_link:focus-visible{outline-offset:2px; border-radius:0.25rem;}
 
@@ -63,11 +56,7 @@ TO DO:
     .header_nav_link:focus-visible{outline:2px solid var(--color-white);}
     .header_logoWrap{
         color:var(--color-white-l1);
-        &:before{
-            background:url(../../../../src/asset/img/koi-trans.png) no-repeat 18px 6px;
-            background-size:81px 104px;
-            filter:grayscale(.1);
-        }
+        &:before{background:none; filter:grayscale(.1);}
     }
 }
 
@@ -76,9 +65,62 @@ TO DO:
     .header_nav_link:focus-visible{outline:2px solid var(--color-focus);}
     .header_logoWrap{
         color:var(--color-black-l1);
-        &:before{
-            background:var(--color-white-d1) url(../../../../src/asset/img/tulip.jpg) no-repeat 22px 10px;
-        }
+        &:before{background:none;}
     }
 }
 
+@media (min-width: 36rem){ /* --break-tablet-potrait (768px) */
+    .header{border:2px solid red;}
+    .header_nav_ul{}
+}
+
+@media (min-width: 48rem){ /* --break-tablet-potrait (768px) */
+    .header{border:2px solid green;}
+    .header_logo{font-size:80px;}
+    .header_payoff{font-size:var(--font-size-s); font-family:var(--font-bodoni);}
+    .header_logoWrap{display:grid; grid-template-columns:110px auto;}
+    .header_logoWrap:before{content:''; width:100%; height:100%; grid-column:1; grid-row:1/3;}
+
+    :global([data-theme="dark"]){
+        .header_logoWrap:before{
+            background:url(/img/koi-trans.png) no-repeat 18px 6px;
+            background-size:81px 104px;
+        }
+    }
+
+    :global([data-theme="light"]){
+        .header_logoWrap:before{
+            background:var(--color-white) url(/img/tulip.jpg) no-repeat 22px 10px;
+        }
+    }
+    
+    /* REDUCE SIZE IN NORMAL CSS, AND INSERT HERE THE BIG SIZE ON NORMAL WEBSITE */
+}
+
+@media (min-width: 62rem){ /* --break-tablet-landscape (992px) */
+    .header{border:2px solid blue;}
+    .header_nav_ul{font-size:inherit; gap:var(--space-m);}
+
+}
+
+
+/* MIN WIDTH
+@media only screen and (min-width: 36rem){ // --break-mobile (576px)
+    .page{width:36rem; padding:var(--space-xl);}
+}
+
+@media only screen and (min-width: 48rem){ // --break-tablet-potrait (768px)
+    .page{width:48rem;}
+    .svgiconlist--grid{grid-template-columns:1fr 1fr 1fr 1fr;}
+    .box-headings .grid{grid-template-columns:1fr 1fr;}
+}
+
+@media only screen and (min-width: 62rem){ // --break-tablet-landscape (992px)
+    .page{width:62rem;}
+    .box-headings .grid{grid-template-columns:1fr 1fr 1fr;}
+}
+
+@media only screen and (min-width: 75rem){ // --break-desktop (1200px)
+    .page{width:75rem;}
+}
+*/
