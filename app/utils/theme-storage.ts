@@ -1,14 +1,11 @@
-const STORAGE_KEY = "toggled";
-
 const listeners = new Set<() => void>();
 
 export function readStoredTheme(): "dark" | "light" {
-  return localStorage.getItem(STORAGE_KEY) === "light" ? "light" : "dark";
+  return document.documentElement.dataset.theme === "light" ? "light" : "dark";
 }
 
 export function applyTheme(theme: "dark" | "light") {
   document.documentElement.dataset.theme = theme;
-  localStorage.setItem(STORAGE_KEY, theme);
   listeners.forEach((listener) => listener());
 }
 
@@ -18,10 +15,8 @@ export function isLightTheme(): boolean {
 
 export function subscribeTheme(onStoreChange: () => void) {
   listeners.add(onStoreChange);
-  window.addEventListener("storage", onStoreChange);
   return () => {
     listeners.delete(onStoreChange);
-    window.removeEventListener("storage", onStoreChange);
   };
 }
 

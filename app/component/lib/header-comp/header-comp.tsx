@@ -1,14 +1,26 @@
+"use client";
+
+import { useEffect, useState } from "react";
+import MediaQuery from "react-responsive";
 import styles from "./header-comp.module.css";
 
 export const headerClassName = styles.header;
 
 export function HeaderComp() {
+  const [mounted, setMounted] = useState(false);
+  // eslint-disable-next-line react-hooks/set-state-in-effect -- intentional client-mount flag to avoid SSR hydration mismatch
+  useEffect(() => setMounted(true), []);
+
   return (
     <>
       <div className={`${styles.header_logoWrap} slide-down`}>
-        <div className={`${styles.header_payoff} slide-down`}>
-          designing an easier way to live&nbsp;
-        </div>
+        {mounted && (
+          <MediaQuery minWidth="36rem">
+            <div className={`${styles.header_payoff} slide-down`}>
+              designing an easier way to live&nbsp;
+            </div>
+          </MediaQuery>
+        )}
         <div className={`${styles.header_logo} slide-down`}>life is simple</div>
       </div>
 
