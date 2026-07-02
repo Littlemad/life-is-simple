@@ -29,12 +29,10 @@ export default function Home() {
         <HeaderComp />
       </header>
       <main className={styles.main}>
-        {/*
+
         <div className={styles.welcome}>
           <p>👋 Hi there, I&apos;m Alessio!</p>
         </div>
-        */}
-   
 
         <TextSlider />
       </main>

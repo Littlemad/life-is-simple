@@ -5,6 +5,8 @@ body{
     transition: background-color 0.3s, color 0.3s;
 }
 
+main{padding:var(--space-m);}
+
 a{text-decoration:none; color:var(--color-link);}
 a:visited{color:var(--color-link-visited);}
 a:hover, a:focus{text-decoration:underline;}
@@ -31,9 +33,7 @@ p{margin-bottom:var(--space-m);}
 */
 
 /* Basic classes */
-.main{
- /* TODO */
-}
+
 
 .table{
     width:100%; border:3px solid;

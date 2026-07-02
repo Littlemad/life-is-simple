@@ -32,9 +32,10 @@
 
 /* ANIMATIONS */
 .header_payoff{--animate-delay:0.2s;}
-.header_logo{--animate-delay:0.4s; transition:font-size 300ms ease;}
+.header_logo{--animate-delay:0.6s; transition:font-size .3s ease;}
+.header_logoWrap:before{--animate-delay:0.1s;}
 .header_nav_ul{transition:font-size 300ms ease;}
-.header_nav_li{--animate-duration:0.3s;}
+.header_nav_li{--animate-duration:0.6s;}
 .header_nav_li:nth-child(1){--animate-delay:0.7s;}
 .header_nav_li:nth-child(2){--animate-delay:0.8s;}
 .header_nav_li:nth-child(3){--animate-delay:0.9s;}
